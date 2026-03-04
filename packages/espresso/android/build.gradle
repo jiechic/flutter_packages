@@ -1,5 +1,5 @@
-group 'com.example.espresso'
-version '1.0'
+group = 'com.example.espresso'
+version = '1.0'
 
 buildscript {
     repositories {
@@ -8,7 +8,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:8.12.1'
+        classpath 'com.android.tools.build:gradle:8.13.1'
     }
 }
 
@@ -26,18 +26,18 @@ android {
     compileSdk = flutter.compileSdkVersion
 
     defaultConfig {
-        minSdkVersion 21
+        minSdkVersion 24
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
 
     lintOptions {
-        checkAllWarnings true
-        warningsAsErrors true
+        checkAllWarnings = true
+        warningsAsErrors = true
         disable 'AndroidGradlePluginVersion', 'InvalidPackage', 'GradleDependency', 'NewerVersionAvailable'
         baseline file("lint-baseline.xml")
     }
@@ -57,10 +57,10 @@ android {
 }
 
 dependencies {
-    implementation("com.google.guava:guava:33.4.8-android")
-    implementation("com.squareup.okhttp3:okhttp:5.1.0")
-    implementation("com.google.code.gson:gson:2.13.2")
-    androidTestImplementation("org.hamcrest:hamcrest:3.0")
+    implementation 'com.google.guava:guava:33.5.0-android'
+    implementation 'com.squareup.okhttp3:okhttp:5.3.1'
+    implementation 'com.google.code.gson:gson:2.13.2'
+    androidTestImplementation 'org.hamcrest:hamcrest:3.0'
 
     testImplementation("junit:junit:4.13.2")
     testImplementation("com.google.truth:truth:1.4.5")
@@ -92,5 +92,3 @@ dependencies {
     // classpath.
     api("androidx.test.espresso:espresso-idling-resource:3.7.0")
 }
-
-
