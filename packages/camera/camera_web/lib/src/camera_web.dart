@@ -37,6 +37,9 @@ class CameraPlugin extends CameraPlatform {
     CameraPlatform.instance = CameraPlugin(cameraService: CameraService());
   }
 
+  @override
+  bool supportsImageStreaming() => true; 
+
   final CameraService _cameraService;
 
   /// The cameras managed by the [CameraPlugin].
